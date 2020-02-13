@@ -5,6 +5,7 @@ class Form extends Component {
     super(props);
     this.state = {username: ''};
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
@@ -12,13 +13,22 @@ class Form extends Component {
     this.setState({username: e.target.value});
   }
 
+  handleSubmit(e) {
+    //Since it's a form, prevent the unnessary loading by calling e.preventDefault
+    e.preventDefault(); // stops the page from refreshing.
+    alert(`You typed ${this.state.username}`);
+    // need to reset the name back to blank
+    this.setState({username: ''});
+  }
+
   render() {
     return (
       <div>
         <h1>Form Demo</h1>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.username} onChange={this.handleChange} />
         </form>
+        <button>Submit!</button>
       </div>
     );
   }
