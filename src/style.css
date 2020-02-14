@@ -1,0 +1,13 @@
+.content {
+        background: red;
+    }
+    #content {
+        background: black;
+    }
+    [data-content="content"] {
+        background: green;
+    }
+    .content[data-content="content"] {
+        background: blue;
+    }
+    </style>

@@ -9,17 +9,13 @@ class Form extends Component {
   }
 
   handleChange(e) {
-    // take the user's input and update it to the state's value
-    // this.setState({username: e.target.value}); // working with one input
     this.setState({[e.target.name]: e.target.value});
   }
 
   handleSubmit(e) {
-    //Since it's a form, prevent the unnessary loading by calling e.preventDefault
-    e.preventDefault(); // stops the page from refreshing.
+    e.preventDefault();
     alert(`You typed ${this.state.username}`);
-    // need to reset the name back to blank
-    this.setState({username: ''});
+    this.setState({username: ''}); // make sure to reset username BACK to empty string
   }
 
   render() {

@@ -26,6 +26,7 @@ class Form extends Component {
       <div>
         <h1>Form Demo</h1>
         <form onSubmit={this.handleSubmit}>
+          <label htmlFor="username">Username</label>
           <input type="text" value={this.state.username} onChange={this.handleChange} />
         </form>
         <button>Submit!</button>
@@ -35,3 +36,5 @@ class Form extends Component {
 }
 
 export default Form;
+
+// <label htmlFor="username">Username</label>  * Always make sure to use htmlFor...
