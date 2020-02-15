@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
-import Form from './Form';
-import MultipleForm from './MultipleForm';
-import './App.css';
+import ShoppingList from './ShoppingList';
+// import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Form />
-        <MultipleForm />
+        <ShoppingList />
       </div>
     );
   }
 }
 
 export default App;
+
+// This App.js file goes to ShoppingList
