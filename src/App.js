@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import ShoppingList from './ShoppingList';
+import ShoppingListForm from './ShoppingListForm';
+
 // import './App.css';
 
 class App extends Component {
@@ -7,6 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <ShoppingList />
+        <ShoppingListForm />
       </div>
     );
   }
