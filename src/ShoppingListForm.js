@@ -4,9 +4,10 @@ class ShoppingListForm extends Component {
   constructor(props) {
     super(props);
     this.state = {name: '', quantity: ''};
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  hanldeChange(e) {
+  handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value // ***with this format, handleChange will control both inputs***
     });
@@ -14,7 +15,8 @@ class ShoppingListForm extends Component {
 
   render() {
     return (
-      <form>
+      // Step 4. Multiple Forms: Add onSubmit to the form element, set it equal to this.hanldeSubmit
+      <form onSubmit={this.handleSubmit}>
         <label htmlFor="name">Name: </label>
         <input
           id="name"
