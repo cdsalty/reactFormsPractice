@@ -27,7 +27,7 @@ class ShoppingList extends Component {
       <ul>
         {this.state.items.map((item) => (
           <li>
-            {item.name}:{item.qunatity}
+            {item.name}: {item.quantity}
           </li>
         ))}
       </ul>
@@ -49,6 +49,6 @@ class ShoppingList extends Component {
   }
 }
 
-// when do you want the addItem to be called? Once the form is submitted.
+// when do you want the addItem to be called? -----> Once the form is submitted.
 
 export default ShoppingList;
