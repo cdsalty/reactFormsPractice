@@ -48,3 +48,11 @@ export default ShoppingListForm;
 
 // The entire goal of handleSubmit is to take care of everything that needs to once the user's submit's their input
 // --> 1. don't refresh page, 2. call addItem prop and pass it the new state (items to go into state)
+
+/*
+uuid returns:
+id:"35c455ad-66df-4fc2-a530-00d0e5c7980c"
+name:"Milk"
+quantity:"2 gallons"
+
+*/

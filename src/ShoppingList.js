@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import ShoppingListForm from './ShoppingListForm';
+import uuid from 'uuid/v4';
 
 class ShoppingList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       items: [
-        {name: 'Milk', quantity: '2 gallons'},
-        {name: 'Breed', quantity: '2 Loaves'}
+        {name: 'Milk', quantity: '2 gallons', id: uuid()},
+        {name: 'Breed', quantity: '2 Loaves', id: uuid()}
       ]
     };
     // STEP 2: Multiple Forms (bind the function)
@@ -16,9 +17,12 @@ class ShoppingList extends Component {
 
   // STEP 1: Multiple Forms (Define a method that will add a single item input)
   addItem(item) {
-    // the item is an object
+    // take the item(object) that is coming in and make sure to give it a prop key/uuid()
+    // carry the entire object/item coming in using ...spread parameter and adding uuid()
+    let newItemFromitem = {...item, id: uuid()};
     this.setState((state) => ({
-      items: [...state.items, item] // add to the existing state along with the new item, this will be new state
+      // items: [...state.items, item] // add to the existing state along with the new item, this will be new state
+      items: [...this.state.items, newItemFromitem]
     }));
   }
 
@@ -26,7 +30,7 @@ class ShoppingList extends Component {
     return (
       <ul>
         {this.state.items.map((item) => (
-          <li>
+          <li key={item.id}>
             {item.name}: {item.quantity}
           </li>
         ))}
